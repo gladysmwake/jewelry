@@ -16,7 +16,7 @@
             <img src="image/logo.png" width="80px">
         </div>
         <nav>
-            <ul>
+            <ul id="MenuItems">
                 <li><a href="home.html">Home</a></li>
                 <li><a href="">Products</a></li>
                <!-- <li><a href="">About</a></li>
@@ -27,7 +27,7 @@
         </nav>
         <div class="button-container">
  
-
+<a href="cart.html">
   <button class="button">
     <svg
       class="icon"
@@ -48,6 +48,7 @@
       ></path>
     </svg>
   </button>
+</a>
 </div>
     </div>
     
@@ -59,12 +60,27 @@
 <div class="small-container single-ptoduct" >
     <div class="row">
         <div class="col-2">
-            <img src="image/boots.jpeg" width="100%">
+            <img src="image/boots.jpeg" width="100%" id="productimg">
+            <!--<div class="small-img-row">
+                <div class="small-img-col">
+                    <img src="" class="small-img" width="100%">
+                </div>
+                <div class="small-img-col">
+                    <img src="" class="small-img" width="100%">
+                </div>
+                <div class="small-img-col">
+                    <img src="" class="small-img" width="100%">
+                </div>
+                <div class="small-img-col">
+                    <img src="" class="small-img" width="100%">
+                </div>
+            </div>--->
         </div>
         <div class="col-2">
             <p></p>
             <h1>Black leather boots</h1>
             <h3>Product details <i class="fa fa-indent"></i></h3>
+            <br>
             <p>“Bold Black Platform Boots” These black platform boots feature a thick sole and high block heel. The front zipper adds convenience, while the sleek design makes a strong fashion statement. Ideal for those seeking both style and height! 🌟</p><br>
             <h2>$80</h2><br>
             <select>
@@ -73,7 +89,9 @@
                 <option>39</option>
                 <option>40</option>
             </select>
-            <input type="number" value="1">
+            <input type="number" value="1" style=" width: 40px;
+  height: 30px;
+  padding: 5px;">
                 <button class="CartBtn" onclick="window.location.href='cart.html';">    <span class="IconContainer"> 
                         <svg xmlns="http://www.w3.org/2000/svg" height="1em" viewBox="0 0 576 512" fill="rgb(17, 17, 17)" class="cart"><path d="M0 24C0 10.7 10.7 0 24 0H69.5c22 0 41.5 12.8 50.6 32h411c26.3 0 45.5 25 38.6 50.4l-41 152.3c-8.5 31.4-37 53.3-69.5 53.3H170.7l5.4 28.5c2.2 11.3 12.1 19.5 23.6 19.5H488c13.3 0 24 10.7 24 24s-10.7 24-24 24H199.7c-34.6 0-64.3-24.6-70.7-58.5L77.4 54.5c-.7-3.8-4-6.5-7.9-6.5H24C10.7 48 0 37.3 0 24zM128 464a48 48 0 1 1 96 0 48 48 0 1 1 -96 0zm336-48a48 48 0 1 1 0 96 48 48 0 1 1 0-96z"></path></svg>
                     </span>
@@ -87,8 +105,17 @@
     </div>
 </div>
 
+<!---------------------Title---------------------------->
+<div class="small-container">
+    <div class="row row-2">
+        <h2>Related Products</h2>
+        <p>View More</p>
+    </div>
+</div>
 
 
+
+<!---------------------Products---------------------------->
     <div class="small-container">
         <div class="row">
         <div class="col-4">
@@ -145,6 +172,7 @@
             <p>$80</p>
         </div>
       </div>
+  </div>
 
 <!---------footer------->
 <div class="footer">
@@ -225,8 +253,45 @@
     </div>
 </div>
 
+<!-------------------JS for toogle menu--------------------------->
+<script type="text/javascript">
+    var MenuItems = documents.getElementById(MenuItems);
+    MenuItems.style.maxHeight="0px";
 
+    function menutoggle() {
+        if( MenuItems.style.maxHeight=="0px")
+        {
+            MenuItems.style.maxHeight="200px";
+        }
+        else
+        {
+            MenuItems.style.maxHeight="0px"
+        }
+    }
+</script>
 
+<!-------------------JS for product gallery------------------------->
+<script type="text/javascript">
+    var productimg = documents.getElementById(productimg);
+    var smallImg = documents.getElementByClassName(small-img);
+        smallImg[0].onclick=function()
+        {
+           productImg.src = smallImg[0].src;
+        }
+        smallImg[1].onclick=function()
+        {
+           productImg.src = smallImg[1].src;
+        }
+        smallImg[2].onclick=function()
+        {
+           productImg.src = smallImg[2].src;
+        }
+        smallImg[3].onclick=function()
+        {
+           productImg.src = smallImg[3].src;
+        }
+
+</script>
 
 
 
