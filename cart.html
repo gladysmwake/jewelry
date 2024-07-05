@@ -59,6 +59,8 @@
             <th>Product</th>
             <th>Quantity</th>
             <th>Subtotal</th>
+            <th>Action</th>
+
         </tr>
         <tr>
             <td>
@@ -68,7 +70,7 @@
                         <p>Black leather platform-boots</p>
                         <small>Price :$60.00</small>
                         <br>
-                        <button class="button">
+                        <button class="button" id="delete-btn-1">
   <svg
     xmlns="http://www.w3.org/2000/svg"
     fill="none"
@@ -122,7 +124,7 @@
                         <p>Black leather platform-boots</p>
                         <small>Price :$40.00</small>
                         <br>
-                        <button class="button">
+                        <button class="button" id="delete-btn-1">
   <svg
     xmlns="http://www.w3.org/2000/svg"
     fill="none"
@@ -175,7 +177,7 @@
                         <p>Black leather platform-boots</p>
                         <small>Price :$80.00</small>
                         <br>
-                        <button class="button">
+                        <button class="button" id="delete-btn-1">
   <svg
     xmlns="http://www.w3.org/2000/svg"
     fill="none"
@@ -228,7 +230,7 @@
                         <p>Black leather platform-boots</p>
                         <small>Price :$65.00</small>
                         <br>
-                        <button class="button">
+                        <button class="button" id="delete-btn-1">
   <svg
     xmlns="http://www.w3.org/2000/svg"
     fill="none"
@@ -278,7 +280,7 @@
         <table>
             <tr>
                 <td>Subtotal</td>
-                <td>$250.00</td>
+                <td>$245.00</td>
 
             </tr>
             <tr>
@@ -288,11 +290,12 @@
             </tr>
             <tr>
                 <td>Total</td>
-                <td>$300.00</td>
+                <td id="total-amount">$295.00</td>
 
             </tr>
         </table>
     </div>
+
     <a href="payments/pay1.html">
     <button class="Btn">
   Check-out
@@ -397,6 +400,23 @@
         }
     }
 </script>
+
+<script type="text/javascript">
+// Get references to the delete buttons
+const deleteBtns = document.querySelectorAll('.button[id^="delete-btn-"]');
+
+// Add event listeners to the delete buttons
+deleteBtns.forEach((btn) => {
+  btn.addEventListener('click', () => {
+    // Remove the parent table row
+    btn.closest('tr').remove();
+  });
+});
+
+
+</script>
+    <script ="cart.js"></script>
+
 
 
 </body>
